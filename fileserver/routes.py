@@ -170,14 +170,14 @@ def get_file_info(id):
             return error_resp(http.NOT_FOUND)
 
 
-@app.get("/session_version")
-def get_session_version():
+@app.get("/bchat_version")
+def get_bchat_version():
     platform = request.args.get("platform")
 
     if platform not in ("desktop", "android", "ios"):
         app.logger.warn("Invalid bchat platform '{}'".format(platform))
         return error_resp(http.NOT_FOUND)
-    project = "Beldex-io/bchat-" + platform
+    project = "Beldex-Coin/bchat-" + platform
 
     with db.psql.cursor() as cur:
         cur.execute(

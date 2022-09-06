@@ -116,7 +116,7 @@ paths:
           description: The file was not found or has expired.
           content: {}
 
-  /session_version:
+  /bchat_version:
     get:
       summary: Retrieves the latest Bchat release version.
       deprecated: True
@@ -212,7 +212,7 @@ paths:
                       endpoint for retrieval.  Will be a value between 1 and 2^53.
 
 
-                      This endpoint is deprecated for Session clients that would break with a
+                      This endpoint is deprecated for Bchat clients that would break with a
                       non-integer identifier; the more efficient and robust `/file` endpoint should
                       be used instead.
 

@@ -135,7 +135,7 @@ def decrypt_reply(data, *, v, enc_type):
     return json_, body
 
 
-def update_session_desktop_version():
+def update_bchat_desktop_version():
     """
     Fileserver errors if the db update version is more than 24 hours old, so update it to a fake
     version for testing.
@@ -149,10 +149,10 @@ def update_session_desktop_version():
 
 
 def test_v3(client):
-    update_session_desktop_version()
+    update_bchat_desktop_version()
 
     # Construct an onion request for /room/test-room
-    req = {'method': 'GET', 'endpoint': 'session_version?platform=desktop'}
+    req = {'method': 'GET', 'endpoint': 'bchat_version?platform=desktop'}
     data = build_payload(req, v=3, enc_type="xchacha20")
 
     r = client.post("/beldex/v3/lsrpc", data=data)
@@ -166,9 +166,9 @@ def test_v3(client):
 
 
 def test_v4(client):
-    update_session_desktop_version()
+    update_bchat_desktop_version()
 
-    req = {'method': 'GET', 'endpoint': '/session_version?platform=desktop'}
+    req = {'method': 'GET', 'endpoint': '/bchat_version?platform=desktop'}
     data = build_payload(req, v=4, enc_type="xchacha20")
 
     r = client.post("/beldex/v4/lsrpc", data=data)
