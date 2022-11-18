@@ -45,7 +45,7 @@ chmod +x packages.sh
    A quick setup, if you've never used it before, is:
    
    ```bash
-   sudo apt install postgresql-server postgresql-client  # Install server and client
+   sudo apt install postgresql postgresql-contrib  # Install server and client
    sudo su - postgres  # Change to postgres system user
 
    createuser www-data
