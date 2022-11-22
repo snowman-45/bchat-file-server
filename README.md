@@ -110,7 +110,7 @@ chmod +x packages.sh
       plugins = python3,logfile
       processes = 4
       manage-script-name = true
-      mount = /=file-server.web:app
+      mount = /=fileserver.web:app
 
       logger = file:logfile=/home/YOURUSER/file-server/sfs.log
       ```
